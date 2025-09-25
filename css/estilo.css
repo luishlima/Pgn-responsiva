@@ -57,19 +57,18 @@ img {
 
     #Esquerda, #Direita {
         width: 25%;
-        height: auto;
+        height: 100%;
     }
 }
 
 @media (max-width: 768px) {
     #Geral {
-        flex-direction: column; /
         align-items: center;
     }
 
     #Esquerda, #Direita {
-        width: 100%;
-        height: 200px;
+        width: 80%;
+        height: 100%;
     }
 
     .Centro {
@@ -78,8 +77,7 @@ img {
 
     .Quadrado {
         width: 100%;
-        max-width: 300px;
-        height: auto;
-        aspect-ratio: 1/1;
+        max-width: 130px;
+        height: 100px;
     }
 }
