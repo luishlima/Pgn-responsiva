@@ -1,50 +1,85 @@
 * {
     margin: 0;
     padding: 0;
+    height: 100%;
     box-sizing: border-box;
 }
 
-/*Topo*/
+/* Topo */
 #Topo {
     background-color: yellow;
     width: 100%;
     height: 150px;
 }
-/*Geral*/
+/* Geral */
 #Geral {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-/*Lado Esquerdo*/
+/* Lado Esquerdo */
 #Esquerda {
     background-color: blue;
     width: 300px;
     height: 588px;
 }
-/*Lado Direito*/
+/* Lado Direito */
 #Direita {
     background-color: red;
     width: 300px;
     height: 588px;
 }
-/*Imagens*/
+/* Imagens */
 img {
     width: 100%;
-    height: 280px;
+    height: auto;
 }
-/*Centro com os quadrados*/
+/* Centro com os quadrados */
 .Centro {
     width: 600px;
     display: grid;
     grid-template-columns: repeat(2, 250px);
     grid-template-rows: repeat(2, 250px);
-    gap: 20px;
     justify-content: center;
-    align-content: center;
 }
 /*Quadrados*/
 .Quadrado {
     width: 250px;
     height: 250px;
+}
+/* Responsividade */
+@media (max-width: 1024px) {
+    .Centro {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    #Esquerda, #Direita {
+        width: 25%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #Geral {
+        flex-direction: column; /
+        align-items: center;
+    }
+
+    #Esquerda, #Direita {
+        width: 100%;
+        height: 200px;
+    }
+
+    .Centro {
+        grid-template-columns: 1fr;
+    }
+
+    .Quadrado {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
 }
